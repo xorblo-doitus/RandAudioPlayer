@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5khos3e8x67r"]
+
+[ext_resource type="Script" path="res://addons/randaudioplayer/sound_collection.gd" id="1_lld2k"]
+[ext_resource type="AudioStream" uid="uid://bicc4il2n7hw4" path="res://tests/break1.wav" id="2_7wq5y"]
+[ext_resource type="AudioStream" uid="uid://5vw7n2upmh0l" path="res://tests/break2.wav" id="3_7nelk"]
+
+[node name="SoundCollection" type="Node"]
+script = ExtResource("1_lld2k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7wq5y")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7nelk")
