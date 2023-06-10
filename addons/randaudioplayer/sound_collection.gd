@@ -8,7 +8,9 @@ class_name SoundCollection
 ## Used to trigger [method play_debug] from the editor
 @export var test_sound: bool = false:
 	set(new):
-		play_debug()
+		test_sound = new
+		if new:
+			play_debug()
 
 var sounds: Array[AudioStreamPlayer] = []
 var playing: Node
@@ -62,5 +64,10 @@ func play_debug() -> void:
 				clone.volume_db = init_volume + volume_range * volume_mul
 				clone.play()
 				await clone.finished
+				
+				if not test_sound:
+					clone.queue_free()
+					return
 		
 		clone.queue_free()
+		test_sound = false
