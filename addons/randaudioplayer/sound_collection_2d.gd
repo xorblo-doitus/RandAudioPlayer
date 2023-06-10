@@ -1,4 +1,5 @@
 @tool
+@icon("icons/AudioStreamPlayer2D.svg")
 extends Node2D
 class_name SoundCollection2D
 

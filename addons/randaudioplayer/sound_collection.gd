@@ -1,4 +1,5 @@
 @tool
+@icon("icons/AudioStreamPlayer.svg")
 extends Node
 class_name SoundCollection
 
