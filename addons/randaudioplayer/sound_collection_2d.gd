@@ -22,7 +22,7 @@ var playing: Node2D
 func _init() -> void:
 	playing = Node2D.new()
 	playing.name = "Playing"
-	add_child(playing)
+	add_child(playing, false, INTERNAL_MODE_BACK)
 	
 	child_entered_tree.connect(add)
 	child_exiting_tree.connect(remove)
