@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="[Addon] RandAudioPlayer"
+config/name="RandAudioPlayer"
+config/tags=PackedStringArray("addon")
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
