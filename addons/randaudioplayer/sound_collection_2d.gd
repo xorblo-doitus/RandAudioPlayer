@@ -11,6 +11,10 @@ class_name SoundCollection2D
 		test_sound = new
 		if new:
 			play_debug()
+## If true, empty
+@export var ignore_empty: bool = false:
+	set(new):
+		ignore_empty = new
 
 var sounds: Array[AudioStreamPlayer2D] = []
 var playing: Node2D
@@ -37,6 +41,10 @@ func remove(child) -> void:
 
 
 func play() -> AudioStreamPlayer2D:
+	if len(sounds) == 0:
+		if not ignore_empty:
+			push_error("SoundCollection2D has not any AudioStreamPlayer2D child.")
+		return
 	var sound: AudioStreamPlayer2D = sounds.pick_random().duplicate()
 	playing.add_child(sound)
 	
@@ -51,6 +59,7 @@ func play() -> AudioStreamPlayer2D:
 
 ## Play each sound variant with the highest random cases
 func play_debug() -> void:
+	play()
 	for sound in sounds:
 		var clone: AudioStreamPlayer2D = sound.duplicate()
 		playing.add_child(clone)
