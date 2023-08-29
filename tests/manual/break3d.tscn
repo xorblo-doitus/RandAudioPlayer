@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://byscogaxk405k"]
 
 [ext_resource type="Script" path="res://addons/randaudioplayer/sound_collection_3d.gd" id="1_xv7wk"]
-[ext_resource type="AudioStream" uid="uid://bicc4il2n7hw4" path="res://tests/break1.wav" id="2_vpfm5"]
-[ext_resource type="AudioStream" uid="uid://5vw7n2upmh0l" path="res://tests/break2.wav" id="3_tn5j4"]
+[ext_resource type="AudioStream" uid="uid://bicc4il2n7hw4" path="res://tests/manual/break1.wav" id="2_vpfm5"]
+[ext_resource type="AudioStream" uid="uid://5vw7n2upmh0l" path="res://tests/manual/break2.wav" id="3_tn5j4"]
 
 [node name="SoundCollection3D" type="Node3D"]
 script = ExtResource("1_xv7wk")
@@ -12,3 +12,12 @@ stream = ExtResource("2_vpfm5")
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_tn5j4")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Play"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="play"]
