@@ -5,13 +5,13 @@ class_name SoundCollection2D
 
 @export_range(0, 20, 0.1) var volume_range: float = 1
 @export_range(0, 1, 0.1) var pitch_range: float = 0.1
-## Used to trigger [method play_debug] from the editor
+## Used to trigger [method play_debug] from the editor.
 @export var test_sound: bool = false:
 	set(new):
 		test_sound = new
 		if new:
 			play_debug()
-## If true, empty
+## If true, no error will be trown when this SoundCollection2D has not any AudioStreamPlayer2D.
 @export var ignore_empty: bool = false:
 	set(new):
 		ignore_empty = new
