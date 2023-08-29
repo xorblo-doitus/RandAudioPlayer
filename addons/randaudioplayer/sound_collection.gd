@@ -72,7 +72,8 @@ func add(node: Node) -> bool:
 
 ## Remove [param node] if it's in [member _sounds].
 func remove(node: Node) -> void:
-	_sounds.erase(node)
+	if node is AudioStreamPlayer:
+		_sounds.erase(node)
 
 
 ## Return a random shift determined by [member volume_curve],
